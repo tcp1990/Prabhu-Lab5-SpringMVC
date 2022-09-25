@@ -25,8 +25,6 @@ public class StudentDaoImpl implements StudentDao {
 	public void saveStudent(Student student) {
 		Session session = factory.getCurrentSession();
 		session.saveOrUpdate(student);
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override

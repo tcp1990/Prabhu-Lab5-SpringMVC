@@ -27,37 +27,31 @@ public class StudentController {
 		return "student-list";
 	}
 
-
-
 	@GetMapping("showStudentForm")
 	public String showStudentForm(Model model) {
-		Student student =new Student();
+		Student student = new Student();
 		model.addAttribute("student", student);
 		return "student-form";
 	}
 
 	@PostMapping("save")
-	public String saveStudent(Model model,
-			@ModelAttribute("student")Student student) {
+	public String saveStudent(Model model, @ModelAttribute("student") Student student) {
 		studentDao.saveStudent(student);
 		return "redirect:/students/list";
 	}
 
 	@GetMapping("update")
-	public String updateStudent(Model model,
-			@RequestParam("id") int id) {
-		 Student student = studentDao.findById(id);
-		 System.out.println(student);
-		 model.addAttribute("student", student);
+	public String updateStudent(Model model, @RequestParam("id") int id) {
+		Student student = studentDao.findById(id);
+		System.out.println(student);
+		model.addAttribute("student", student);
 		return "student-form";
 	}
 
-
 	@GetMapping("delete")
-	public String deleteStudent(Model model,
-			@RequestParam("id") int id) {
-		 studentDao.deleteStudent(id);
-		 return "redirect:/students/list";
+	public String deleteStudent(Model model, @RequestParam("id") int id) {
+		studentDao.deleteStudent(id);
+		return "redirect:/students/list";
 	}
 
 }

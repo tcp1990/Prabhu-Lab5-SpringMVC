@@ -19,12 +19,16 @@
 	<mvc:annotation-driven />
 
 	<!-- add support for component scanning -->
-	<context:component-scan  base-package="com.gl.stdmgmt" />
+	<context:component-scan
+		base-package="com.gl.stdmgmt" />
 
 	<!-- 1. Define database datasource / connection pool -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/college-fest" />
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/college-fest" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 		<property name="initialSize" value="5" />
@@ -62,10 +66,11 @@
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	 
+
 
 	<!-- 4. Enable configuration of transactional annoations -->
-	<tx:annotation-driven transaction-manager="transactionManager" />
+	<tx:annotation-driven
+		transaction-manager="transactionManager" />
 </beans>
 	 
  
