@@ -30,7 +30,7 @@
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/college-fest" />
 		<property name="username" value="root" />
-		<property name="password" value="root" />
+		<property name="password" value="" />
 		<property name="initialSize" value="5" />
 		<property name="maxActive" value="20" />
 		<property name="maxIdle" value="2" />
